@@ -1,0 +1,11 @@
+f = open(r'C:\Users\huseph\Desktop\python\8.1\record.txt','rb')
+
+tmp = f.read()
+print(tmp)
+print(f.tell())
+f.seek(0,0)
+print(f.tell())
+f.seek(3,0)
+print(f.tell())
+f.seek(-5,2)
+print(f.tell())

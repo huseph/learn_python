@@ -1,0 +1,5 @@
+tuple1 = (1, )
+tuplefake = (1)
+print(type(tuple1))
+print(type(tuplefake))
+print(isinstance(tuple1, tuple))
