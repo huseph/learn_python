@@ -65,7 +65,7 @@ def lets_roll():
         ch_num2= int(html.find('">', ch_num1))
         ch_name1 = int(html.find('<div class="photo_title">', ch_num1)) + 25;
         ch_name2 = int(html.find('<', ch_name1))
-        character(html[ch_num1: ch_num2], html[ch_name1: ch_name2])
+        character(html[ch_num1: ch_num2], html[ch_name1: ch_name2].replace("/", " "))
         ch_num1 = html.find('href="/member/Itsuki-chan/characters/', ch_num1)
     
 
