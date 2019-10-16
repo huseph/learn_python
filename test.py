@@ -10,11 +10,18 @@ url1 = 'https://worldcosplay.net/member/Itsuki-chan/characters/'
 
 
 def url_open(url):
-    print('这是url::',url,'\n')
+    print('这是url::',url)
     req = urllib.request.Request(url)
     req.add_header('User-Agent','Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 YaBrowser/19.9.3.314 Yowser/2.5 Safari/537.36')
-    response = urllib.request.urlopen(url)
+    
+    print("req.add_header succeeded")
+    
+    response = urllib.request.urlopen(req)
+    
+    print("urlopen succeeded")
+    
     html = response.read()
+    print("read succeeded")
     return html
     
 
@@ -65,7 +72,7 @@ def lets_roll():
         ch_num2= int(html.find('">', ch_num1))
         ch_name1 = int(html.find('<div class="photo_title">', ch_num1)) + 25;
         ch_name2 = int(html.find('<', ch_name1))
-        character(html[ch_num1: ch_num2], html[ch_name1: ch_name2])
+        character(html[ch_num1: ch_num2], html[ch_name1: ch_name2].replace("/", " "))
         ch_num1 = html.find('href="/member/Itsuki-chan/characters/', ch_num1)
     
 
